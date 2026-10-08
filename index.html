@@ -151,6 +151,230 @@ a:focus-visible,button:focus-visible,.node:focus-visible{outline:2px solid var(-
 .contactlinks{gap:32px}
 .case-gallery.mix{grid-template-columns:3fr 4fr}.case-fig.native{max-width:min(100%,760px)}
 @media(max-width:700px){.case-gallery.mix{grid-template-columns:1fr}}
+
+/* ===== MOBILE IMPROVEMENTS ===== */
+
+/* --- 800px: tablets & large phones --- */
+@media(max-width:800px){
+  section{padding:70px 0}
+
+  /* Contact: kill excessive min-height */
+  .contact{min-height:auto;padding:80px 0}
+
+  /* All boxes: let content drive height */
+  .case-workitem{min-height:auto;padding:24px}
+  .dual>div{min-height:auto}
+  .map-item{min-height:auto}
+  .work{min-height:auto}
+
+  /* War room: too tall on mobile */
+  .room{min-height:420px}
+
+  /* Sticky note: move below headline, bottom-right */
+  .sticky{display:block;width:120px;top:auto;bottom:14%;right:3%;transform:rotate(3deg)}
+}
+
+/* --- 520px: small phones --- */
+@media(max-width:520px){
+  section{padding:48px 0}
+  h1{font-size:34px;line-height:.86}
+  .bigstatement{font-size:clamp(30px,9vw,42px);margin:12px 0 36px}
+  .hero{min-height:68vh}
+  .metric strong{font-size:clamp(32px,9vw,48px)}
+  .contact h2{font-size:clamp(44px,13vw,65px)}
+  .contact{padding:60px 0}
+  .hero-meta{font-size:11px}
+  .room{min-height:380px}
+  .room-item{width:150px;font-size:13px}
+  .sticky{width:100px;bottom:12%}
+
+  /* Reduce internal box padding on small screens */
+  .case-workitem{padding:18px}
+  .dual>div{padding:22px}
+  .map-item{padding:20px}
+}
+
+/* --- 380px: very small phones --- */
+@media(max-width:380px){
+  .sticky{display:none}
+  section{padding:38px 0}
+  .contact h2{font-size:40px}
+  .contact{padding:50px 0}
+  .room{min-height:340px}
+}
+
+/* --- UNIFIED BOX & SPACING FIXES (WEB & MOBILE) --- */
+
+/* 1. Contact Section Spacing Fix */
+.contact {
+  min-height: auto !important;
+  padding: 80px 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 800px) {
+  .contact {
+    padding: 50px 0 !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .contact {
+    padding: 40px 0 !important;
+  }
+}
+
+/* 2. Room / Interactive Thinking Section Height Fix */
+.room {
+  min-height: 480px !important;
+}
+
+@media (max-width: 800px) {
+  .room {
+    min-height: 340px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .room {
+    min-height: 280px !important;
+  }
+}
+
+/* 3. Case Workitems / Strategy Boxes / Execution Cards */
+.case-workitem {
+  min-height: auto !important;
+  padding: 22px 24px !important;
+}
+
+@media (max-width: 800px) {
+  .case-workitem {
+    padding: 18px 20px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .case-workitem {
+    padding: 16px 16px !important;
+  }
+}
+
+.case-workitem p {
+  margin-top: 8px !important;
+  max-width: 100% !important;
+  line-height: 1.55 !important;
+  text-wrap: pretty !important;
+}
+
+/* 4. Dual Grid / Strategy Capabilities Boxes */
+.dual > div {
+  min-height: auto !important;
+  padding: 24px 28px !important;
+}
+
+@media (max-width: 800px) {
+  .dual > div {
+    padding: 20px 22px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .dual > div {
+    padding: 16px 18px !important;
+  }
+}
+
+.dual p {
+  max-width: 100% !important;
+  margin-top: 8px !important;
+  line-height: 1.55 !important;
+  text-wrap: pretty !important;
+}
+
+/* 5. Map Items (Capabilities / Strategic Approach) */
+.map-item {
+  min-height: auto !important;
+  padding: 22px 24px !important;
+}
+
+@media (max-width: 800px) {
+  .map-item {
+    padding: 18px 20px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .map-item {
+    padding: 16px 16px !important;
+  }
+}
+
+.map-item p {
+  max-width: 100% !important;
+  margin-top: 6px !important;
+  line-height: 1.5 !important;
+  text-wrap: pretty !important;
+}
+
+/* 6. Selected Work Cards */
+.work {
+  min-height: auto !important;
+  padding: 26px 28px !important;
+}
+
+@media (max-width: 800px) {
+  .work {
+    padding: 20px 22px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .work {
+    padding: 18px 18px !important;
+  }
+}
+
+.work p {
+  max-width: 100% !important;
+  line-height: 1.5 !important;
+  text-wrap: pretty !important;
+}
+
+/* 7. Info Panel / Status / Result / Case Meta Items */
+.info-panel {
+  min-height: auto !important;
+  padding: 24px !important;
+}
+
+@media (max-width: 520px) {
+  .info-panel {
+    padding: 18px !important;
+  }
+}
+
+.info-panel p {
+  max-width: 100% !important;
+  line-height: 1.6 !important;
+  text-wrap: pretty !important;
+}
+
+.case-meta-item {
+  padding: 18px 20px !important;
+}
+
+@media (max-width: 520px) {
+  .case-meta-item {
+    padding: 14px 16px !important;
+  }
+}
+
+.job p, .project p, .status {
+  max-width: 100% !important;
+  text-wrap: pretty !important;
+}
+
 </style>
 </head>
 <body>
